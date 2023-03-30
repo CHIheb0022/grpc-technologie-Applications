@@ -1,0 +1,59 @@
+plugins {
+    id "java-library"
+    id "maven-publish"
+
+    id "com.google.protobuf"
+    id "ru.vyarus.animalsniffer"
+}
+
+description = "gRPC: Google Cloud Platform Observability"
+
+tasks.named("compileJava").configure {
+    it.options.compilerArgs += [
+            // only has AutoValue annotation processor
+            "-Xlint:-processing"
+    ]
+    appendToProperty(
+            it.options.errorprone.excludedPaths,
+            ".*/build/generated/sources/annotationProcessor/java/.*",
+            "|")
+}
+
+dependencies {
+    def cloudLoggingVersion = '3.14.5'
+
+    annotationProcessor libraries.auto.value
+    api project(':grpc-api')
+
+    // TODO(dnvindhya): Prefer using our own libraries, update the dependencies
+    //  in gradle/libs.versions instead
+    implementation project(':grpc-protobuf'),
+            project(':grpc-stub'),
+            project(':grpc-alts'),
+            project(':grpc-census'),
+            ("com.google.cloud:google-cloud-logging:${cloudLoggingVersion}"),
+            libraries.opencensus.contrib.grpc.metrics,
+            libraries.opencensus.exporter.stats.stackdriver,
+            libraries.opencensus.exporter.trace.stackdriver,
+            project(':grpc-xds'), // Align grpc versions
+            project(':grpc-services'), // Align grpc versions
+            ('com.google.protobuf:protobuf-java:3.21.12'),
+            ('com.google.api.grpc:proto-google-common-protos:2.14.2'),
+            ('com.google.auth:google-auth-library-oauth2-http:1.16.0'),
+            ('io.opencensus:opencensus-api:0.31.1'),
+            ('com.google.guava:guava:31.1-jre')
+
+    runtimeOnly libraries.opencensus.impl
+
+    testImplementation project(':grpc-context').sourceSets.test.output,
+            project(':grpc-testing'),
+            project(':grpc-testing-proto'),
+            project(':grpc-netty-shaded')
+    testImplementation (libraries.guava.testlib) {
+        exclude group: 'junit', module: 'junit'
+    }
+
+    signature libraries.signature.java
+}
+
+configureProtoCompilation()
