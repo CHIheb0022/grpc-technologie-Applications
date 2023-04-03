@@ -1,3 +1,5 @@
 {
-    "java.compile.nullAnalysis.mode": "automatic"
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.maven.enabled": false,
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
