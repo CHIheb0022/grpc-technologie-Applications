@@ -1,0 +1,36 @@
+Prerequisites:
+
+JDK version 7 or higher
+Protobuf version 2.2  
+
+Get the example code from : https://grpc.io/docs/languages/java/quickstart/ and u are ready to get started 
+
+Building using gradle with the option -PskipSdk = true; while running ./gradlew/installDist to compile the server and the client avoiding android sdk problems
+
+Run the server : ./build/install/examples/bin/hello-world-server
+INFO: Server started, listening on 50051
+
+in another terminal,
+
+Run the client : ./build/install/examples/bin/hello-world-client
+INFO: Will try to greet "world" ...  (wrold is the message requested it will be sent to the server and then the reply service will send it back)
+INFO: Greeting: Hello "world"
+
+Congratulations! You’ve just run a client-server application with gRPC.
+
+Notes: 
+
+To turn off the server, you need to find the process ID (PID) of the server and then stop the process. Here's how you can do it:
+
+netstat -ano | findstr :50051 (50051 is PID) 
+
+This will display a list of all the processes running on port 50051, along with their corresponding process IDs (PID).
+
+In my case i'have got :
+ 
+  TCP    0.0.0.0:50051          0.0.0.0:0              LISTENING       19124 
+  TCP    [::]:50051             [::]:0                 LISTENING       19124
+
+So the PID is 19124, to terminate the server process use the commande:
+
+taskkill /F /PID 19124
