@@ -3,7 +3,7 @@ Prerequisites:
 JDK version 7 or higher
 Protobuf version 2.2  
 
-Get the example code from : https://grpc.io/docs/languages/java/quickstart/ and u are ready to get started 
+Go get the example code from : https://grpc.io/docs/languages/java/quickstart/ and u are ready to get started 
 
 Building using gradle with the option -PskipSdk = true; while running ./gradlew/installDist to compile the server and the client avoiding android sdk problems
 
