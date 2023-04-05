@@ -34,3 +34,58 @@ In my case i'have got :
 So the PID is 19124, to terminate the server process use the commande:
 
 taskkill /F /PID 19124
+
+General grpc concepts :
+
+-> Protobuf runtime: is a library that provides support for encoding and decoding data in the Protocol Buffers format. Protocol Buffers (protobuf) is a 
+language-agnostic data serialization format developed by Google, which allows for efficient and platform-independent communication between systems.
+The protobuf runtime library provides the necessary tools to parse and serialize data in the protobuf format, as well as to generate language-specific code from
+protobuf schema definitions. 
+
+It includes support for various programming languages, such as Java, C++, Python, and Go, among others.
+One of the main advantages of using the protobuf runtime library is its efficiency in terms of data size and parsing speed. Compared to other data serialization 
+formats, protobuf is typically smaller in size and faster to parse, which can lead to significant performance improvements in data-intensive applications.
+In addition to the core encoding and decoding functionality, the protobuf runtime library also includes support for features such as field presence detection, 
+default values, and nested messages, among others. This makes it a powerful tool for building complex and scalable systems that require efficient and reliable
+data communication.
+
+-> What's the differences between data parsing and serialization: Data parsing and serialization are two related concepts, but they refer to different processes 
+in dataprocessing. Data parsing involves analyzing a string or a sequence of bytes and extracting structured information from it, according to a specific format
+or grammar. The process of parsing typically involves breaking down the input data into its individual components, such as fields or tokens, and validating or
+transforming them according to predefined rules or constraints. The result of parsing is usually a data structure or an object that represents the parsed information
+in a structured way, such as a tree, a graph, or a dictionary.
+
+Serialization, on the other hand, involves converting a structured data object or a data structure into a format that can be stored or transmitted as a stream of bytes
+or characters. The serialization process typically involves encoding the structured data into a specific format, such as JSON, XML, or Protocol Buffers, by mapping its
+components to a set of primitive data types, such as numbers, strings, or arrays. The resulting serialized data can then be transmitted or stored in a database, a 
+file, or a network buffer.
+
+In summary, parsing is the process of extracting structured information from an input data stream, while serialization is the process of encoding structured
+information into a format that can be transmitted or stored.
+
+-> Some usefull technical definitions:
+1) Gradle is a popular build automation tool used in the software development process. It allows developers to automate the building, testing, and deployment of their applications.
+Gradle 7.6 is the latest version of Gradle, released in August 2021. It includes several new features and improvements, such as better support for Java 17, faster build caching, 
+and improved dependency management.
+
+With Gradle, developers can define their build scripts using a Groovy or Kotlin DSL, which allows for more flexibility and customization compared to other build tools 
+like Maven or Ant. Gradle also provides a plugin system that allows developers to easily integrate with other tools and frameworks.
+
+Overall, Gradle is a powerful and flexible tool that can help streamline the software development process, especially for larger and more complex projects.
+
+2) Maven released in mars 1997 / script definitions : XML in a file called pom.xml. The pom.xml file specifies the project's dependencies, plugins, and other 
+   configuration details, such as the project's name, version, and packaging type.
+   Ant: released in 2000 as an open-source project by the Apache Software Foundation uses XML as a script language.
+
+3) CMake is an open-source, cross-platform build system that is used to manage the build process of software projects. It allows developers to write build scripts
+in a declarative language that is then used to generate native build files for a variety of platforms, including Unix, Linux, Windows, and macOS.
+CMake was initially developed by Kitware in 2000 as a replacement for their in-house build system, and it has since become one of the most widely used build systems
+in the software development industry. CMake provides a range of features, including automatic dependency resolution, support for out-of-tree builds, and the ability
+to easily add and configure third-party libraries. It can be used with a variety of programming languages, including C++, C#, Python, GO and Fortran, among others.
+
+4) Makefile is an older build automation tool that has been around since the 1970s. It is typically used to manage the compilation and linking of C and C++ programs. 
+Makefile uses a text-based script format that specifies the dependencies between files and the commands needed to build the final executable.
+
+
+
+
