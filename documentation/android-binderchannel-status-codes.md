@@ -383,3 +383,5 @@ Android’s Parcel class exposes a mechanism for marshalling certain types of `R
 The calling Activity or Service Context might be destroyed with a gRPC request in flight. Apps should cease operations when the Context hosting it goes away and this includes cancelling any outstanding RPCs.  
 
 Status code mapping: **CANCELLED**
+
+#chiheb hmida
