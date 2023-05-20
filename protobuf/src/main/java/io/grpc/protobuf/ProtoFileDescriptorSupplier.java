@@ -29,3 +29,6 @@ public interface ProtoFileDescriptorSupplier {
    */
   FileDescriptor getFileDescriptor();
 }
+
+
+/*yoo*/
